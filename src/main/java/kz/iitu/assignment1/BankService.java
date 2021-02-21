@@ -10,9 +10,4 @@ public interface BankService {
     double withdraw(double amount);
     double topUP(double amount);
     void changePIN();
-    void init() throws SQLException;
-    void setBank(Bank bank);
-    void destroy() throws SQLException;
-    Connection DBcon();
-    Bank getBank();
 }

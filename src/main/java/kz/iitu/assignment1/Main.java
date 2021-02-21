@@ -9,12 +9,10 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
-        BankService bankService = context.getBean("ATM",ATM.class);
+        Bank bank = context.getBean("bank",Bank.class);
 
-        Account acc = bankService.getBank().getAccounts().get(0);
-        bankService.menu(acc);
+        Account acc = bank.getAccounts().get(1);
+        bank.getBankService().menu(acc);
         ((ClassPathXmlApplicationContext) context).close();
-
-
     }
 }
